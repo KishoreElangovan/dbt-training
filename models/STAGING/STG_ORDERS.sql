@@ -20,9 +20,12 @@ select
     p.PRODUCTID,
     p.CATEGORY AS PRODUCTCATEGORY,
     p.PRODUCTNAME,
-    p.SUBCATEGORY AS PRODUCTSUBCATEGORY
+    p.SUBCATEGORY AS PRODUCTSUBCATEGORY,
+    d.delivery_team AS delivery_team
  from {{ ref('RAW_ORDERS') }} o
  left join {{ ref('RAW_CUSTOMER') }} c
  on o.customerid = c.customerid
  left join {{ ref('RAW_PRODUCT') }} p
  on o.productid = p.productid
+left join {{ ref('delivery_team') }} d
+on o.SHIPMODE = d.SHIPMODE
