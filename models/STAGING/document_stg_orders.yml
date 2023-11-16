@@ -1,0 +1,10 @@
+version: 2
+models:
+  - name: STG_ORDERS
+    description: Contains orders data assciated with customer and product
+    columns:
+      - name: orderid
+        description: unique and primary key
+      - name: shipmode
+        description: '{{doc("shipmode_stg_orders")}}'
+                     
