@@ -4,6 +4,7 @@
     )
 }}
 select 
+    {{ dbt_utils.generate_surrogate_key( ['o.ORDERID', 'c.CUSTOMERID', 'p.PRODUCTID'] ) }} as ORDERKEY,
     o.ORDERID,
     o.ORDERDATE,
     o.SHIPDATE,
