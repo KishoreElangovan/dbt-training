@@ -3,7 +3,6 @@
         materialized='table'
     )
 }}
-
 select 
     o.ORDERID,
     o.ORDERDATE,

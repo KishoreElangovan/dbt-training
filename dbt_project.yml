@@ -39,8 +39,8 @@ models:
   globalmart:
     # Applies to all files under models/example/
     raw:
-      +materialized: table
+        +materialized: table
     reporting:
-      +materialized: view
+        +materialized: view
     staging:
-      +materialized: table
+        +materialized: table
