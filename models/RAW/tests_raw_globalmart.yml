@@ -7,4 +7,20 @@ models:
         tests:
           - not_null
           - unique
+  - name: RAW_ORDERS
+    columns:
+      - name: shipmode
+        tests:
+          - accepted_values:
+              values:
+                - "Second Class"  
+                - "Standard Class"
+                - "First Class"
+                - "Same Day"
+                - "Unknown"
+      - name: customerid
+        tests:
+          - relationships:
+              field: customerid
+              to: ref('RAW_CUSTOMER')        
               
