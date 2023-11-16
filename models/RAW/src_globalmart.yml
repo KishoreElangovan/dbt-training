@@ -1,18 +1,24 @@
 version: 2
 sources:
   - name: globalmart
+    description: contains order,customer,product data from snowflake account
     database: raw
     schema: globalmart
     tables:
       - name: customer
+        description: customer details of globalmart
         columns:
           - name: customerid
+            description: unique column
             tests:
               - unique
               - not_null           
       - name: orders
+        description: order details of globalmart
         columns:
           - name: orderid
+            description: unique
             tests:
               - unique             
       - name: product
+        description: product details of global mart
